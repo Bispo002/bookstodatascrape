@@ -1,6 +1,14 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
+import logging
 
+# Logging configuration
+logging.basicConfig(
+    level=logging.INFO,
+    format='%(asctime)s - %(levelname)s - %(message)s',
+    filename='log.txt',
+    filemode='w'
+)
 
 def table_book(driver: webdriver) -> tuple:
     """
