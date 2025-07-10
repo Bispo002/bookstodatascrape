@@ -7,4 +7,5 @@ packages used for the scraping. You need to install all of them.
 ```
 pip install selenium
 pip install pandas
+pip install scikit-learn
 ```
