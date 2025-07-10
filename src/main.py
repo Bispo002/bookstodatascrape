@@ -1,7 +1,8 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import WebDriverException
-from functions import table_book, rate_treatment, info_books
+from src.functions import table_book, rate_treatment, info_books
+from src.model import model
 import pandas as pd
 import time
 import logging
@@ -109,7 +110,7 @@ if __name__ == '__main__':
     logging.basicConfig(
         level=logging.INFO,
         format='%(asctime)s - %(levelname)s - %(filename)s:%(lineon)d - %(message)s',
-        filename='log.txt',
+        filename='../log.txt',
         filemode='w'
     )
 
