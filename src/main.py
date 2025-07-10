@@ -2,7 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import WebDriverException
 from src.functions import table_book, rate_treatment, info_books
-from src.model import model
+from src.model import model_training
 import pandas as pd
 import time
 import logging
@@ -109,8 +109,8 @@ if __name__ == '__main__':
     # Logging configuration
     logging.basicConfig(
         level=logging.INFO,
-        format='%(asctime)s - %(levelname)s - %(filename)s:%(lineon)d - %(message)s',
-        filename='../log.txt',
+        format='%(asctime)s - %(levelname)s - %(filename)s:%(lineno)d - %(message)s',
+        filename='../outputs/log.txt',
         filemode='w'
     )
 
@@ -123,7 +123,9 @@ if __name__ == '__main__':
 
         # Export to CSV
         df = pd.DataFrame(all_books)
-        df.to_csv("books.csv", index=False)
+        df.to_csv("../outputs/books.csv", index=False)
+        model_training()
+
 
     finally:
         driver.quit()
